@@ -1,8 +1,16 @@
 import requests
 import cgi
+import cgitb
+
 form = cgi.FieldStorage()
-artist =  form.getvalue('Artist Name')
-song =  form.getvalue('Song Name')
+if "Artist Name" not in form or "Song Name" not in form:
+    print("<H1>Error</H1>")
+    print("Please fill in the name and addr fields.")
+    return
+artist = form["Artist Name"].value
+song = form["Song Name"].value
+print("<p>Now Displaying content for:", artist, '-', song)
+
 data = {
     'url': 'https://audd.tech/'+artist + ' '+ song,
     'return': 'timecode,apple_music,deezer,spotify',
@@ -10,4 +18,3 @@ data = {
 }
 result = requests.post('https://api.audd.io/', data=data)
 print(result.text)
-
