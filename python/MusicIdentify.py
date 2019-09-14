@@ -5,12 +5,13 @@ import requests
 
 
 def hello_world(request):
-	artist = form["Artist Name"].value
-	song = form["Song Name"].value
-	print("<p>Now Displaying content for:", artist, '-', song)
-	data = {'url': 'https://audd.tech/'+artist + ' '+ song,'return': 'timecode,apple_music,deezer,spotify','api_token': 'd54c12502bf9f8c2fb1af38c26b3f58b'}
-	result = requests.post('https://api.audd.io/', data=data)
-	return Response("<p>",result.text,"<p>")
+	artist = (str(request)[str(request).index("Artist+Name=")+12:str(request).index("&")])
+	song = (str(request)[str(request).index("Song+Name=")+10:str(request).index("HTTP/1.1")-1])
+	print(artist)
+	print(song)
+	print("Now Displaying content for:", song, 'by', artist)
+	result = requests.get('https://api.audd.io/findLyrics/?q='+artist + '%20'+ song)
+	return Response(result.text)
 
 if __name__ == '__main__':
     with Configurator() as config:
