@@ -11,6 +11,3 @@ data = {
 result = requests.post('https://api.audd.io/', data=data)
 print(result.text)
 
-index = open("index.html").read().format(first_header=result.text, 
-                                         p1='World', 
-                                         p2=result.text)
