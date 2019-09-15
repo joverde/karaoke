@@ -235,6 +235,7 @@ function checkSimilarity(){
                 <p>You got a <span id=\"output\">0</span>%</p>
                 <button id=\"streamButton\" onclick=\"doStream()\">Record</button>
                 <p id=\"status\">Not Started</p>
+                <table class=\"messageTable\" id=\"messages\"></table></a>
             </a>
           </div>
 
