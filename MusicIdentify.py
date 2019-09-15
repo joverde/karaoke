@@ -15,6 +15,8 @@ def hello_world(request):
 	videoid = url.split("v=")
 	if len(videoid) >1:
 		videoid = url.split("v=")[1]
+		if not isinstance(videoid, str):
+			videoid = ""
 		
 		# if vid["provider"] == 'youtube':
 		# 	vidsource == vid["url"]
