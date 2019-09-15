@@ -11,9 +11,9 @@ def hello_world(request):
 	print("Now Displaying content for:", song, 'by', artist)
 	result = requests.get('https://api.audd.io/findLyrics/?q='+artist + '%20'+ song+"&api_token=d54c12502bf9f8c2fb1af38c26b3f58b")
 	print(result.json()["result"][0]["lyrics"])
-	print(result.json()["result"][0]['media'])
-	for vid in list(result.json()["result"][0]['media']):
-		print(vid)
+	url = (json.loads(result.json()["result"][0]["media"])[0]["url"])
+	videoid = url.split("v=")[1]
+		
 		# if vid["provider"] == 'youtube':
 		# 	vidsource == vid["url"]
 	# print(vidsource)
@@ -241,7 +241,9 @@ function checkSimilarity(){
 
 
     <div class=\"parent\">
-        <a href=\"#\" id=\"lyrics2\">"""+result.json()["result"][0]["lyrics"]+"""</p> </div>\n <style> 
+        <a href=\"#\" id=\"lyrics2\">"""+result.json()["result"][0]["lyrics"]+"""</p><iframe width=\"420\" height=\"315\"
+src=\"https://www.youtube.com/embed/""" + videoid + """?autoplay=1\">
+</iframe> </div>\n <style> 
 
 
 #banner{
