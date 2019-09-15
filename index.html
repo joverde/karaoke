@@ -22,12 +22,15 @@ body {
 
 input {
   background: transparent;
-  outline: white;
-  border-radius: 10px;
+  border: transparent;
   font-family: Helvetica;
   font-size: 4vw;
   color: white;
 }
+
+input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
 
 #myVideo {
   position: fixed;
