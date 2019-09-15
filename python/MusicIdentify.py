@@ -8,13 +8,11 @@ import json
 def hello_world(request):
 	artist = (str(request)[str(request).index("Artist+Name=")+12:str(request).index("&")])
 	song = (str(request)[str(request).index("Song+Name=")+10:str(request).index("HTTP/1.1")-1])
-	print(artist)
-	print(song)
 	print("Now Displaying content for:", song, 'by', artist)
 	result = requests.get('https://api.audd.io/findLyrics/?q='+artist + '%20'+ song+"&api_token=d54c12502bf9f8c2fb1af38c26b3f58b")
 	print(result.json()["result"][0]["lyrics"])
 
-	return Response(result.json()["result"][0]["lyrics"])
+	return Response(result.json()["result"][0]["lyrics"] + "\n" + "<style> body {background-color: #282C2F;}  body  {color: #F2F4F4;} body  {font-size: 4vw;} body {font-family: Arial;}</style>")
 
 if __name__ == '__main__':
     with Configurator() as config:

@@ -1,5 +1,44 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: Helvetica;
+  color: white;
+  font-outline: black;
+  font-size: 5vw;
+  text-align: center;
+  position: absolute;
+  min-width: 100%; 
+  min-height: 100%;
+  top: 50vh;
+
+}
+
+input {
+  background: transparent;
+  outline: white;
+  border-radius: 10px;
+  font-family: Helvetica;
+  font-size: 4vw;
+  color: white;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -2;
+}
+
+</style>
 <body>
 
 <form action="http://localhost:6546/">
@@ -10,5 +49,9 @@ Enter Song Name: <input type="text" name="Song Name" value=""><br>
 
 <p>Enter song info, then hit Submit!</p>
 
+<video autoplay muted loop id="myVideo">
+  <source src="resources/stagevid.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
 </body>
 </html>
