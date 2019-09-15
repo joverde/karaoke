@@ -12,7 +12,9 @@ def hello_world(request):
 	result = requests.get('https://api.audd.io/findLyrics/?q='+artist + '%20'+ song+"&api_token=d54c12502bf9f8c2fb1af38c26b3f58b")
 	print(result.json()["result"][0]["lyrics"])
 	url = (json.loads(result.json()["result"][0]["media"])[0]["url"])
-	videoid = url.split("v=")[1]
+	videoid = url.split("v=")
+	if len(videoid) >1:
+		videoid = url.split("v=")[1]
 		
 		# if vid["provider"] == 'youtube':
 		# 	vidsource == vid["url"]
