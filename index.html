@@ -57,18 +57,19 @@ Enter Song Name: <input type="text" name="Song Name" value=""><br>
 
 <p>Enter song info, then hit Submit!</p>
 
+
+
+<video autoplay muted loop id="myVideo">
+  <source src="resources/stagevid.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
 <div id="ds-terms-of-service"></div>
 <script src="https://demo.docusign.net/clickapi/sdk/latest/docusign-click.js"></script>
 <script>docuSignClick.Clickwrap.render({
     environment: 'https://demo.docusign.net',
     accountId: '89087583-d165-4c36-8fb1-153abcbc6eb2',
     clickwrapId: 'b337d21b-39ab-49c9-85f6-c9f66446b44b',
-    clientUserId: 'UNIQUE_USER_ID'
+    clientUserId: '3'
   }, '#ds-terms-of-service');</script>
-
-<video autoplay muted loop id="myVideo">
-  <source src="resources/stagevid.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
 </body>
 </html>
