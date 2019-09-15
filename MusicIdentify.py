@@ -220,7 +220,118 @@ function checkSimilarity(){
     return costs[s2.length];
   }
 
-</script> </head> <p>Steve KarAoki</p> <button id=\"streamButton\" onclick=\"doStream()\">Record</button> <p id=\"status\">Not Started</p> <table id=\"messages\"></table> <p>You got a <span id=\"output\">0</span>%</p><p>Lyrics:</p> <p id=\"lyrics2\">"""+result.json()["result"][0]["lyrics"]+"""</p>" + "\n" + "<style> body {background-color: #282C2F;}  body  {color: #F2F4F4;} body  {font-size: 3.2vw;} body {font-family: Arial;}</style>""")
+</script> </head>     <div id=banner>
+        <div class=\"centered\">Steve KarAoki</div>
+    </div>
+
+
+    <div class=\"parent\">
+            <a href=\"#\">
+                <br>
+                Welcome to Steve KarAoki! <br>
+                Press record when you are ready to start! <br>
+                Good Luck :P </a>
+            <a href=\"#\">
+                <p>You got a <span id=\"output\">0</span>%</p>
+                <button id=\"streamButton\" onclick=\"doStream()\">Record</button>
+                <p id=\"status\">Not Started</p>
+            </a>
+          </div>
+
+
+    <div class=\"parent\">
+        <a href=\"#\" id=\"lyrics2\">"""+result.json()["result"][0]["lyrics"]+"""</p> </div>\n <style> 
+
+
+#banner{
+    position: relative;
+    font-family: 'Arial';
+    font-style: bold;
+    color: azure;
+    text-align: center;
+    font-size: 60px;
+    text-shadow: 2px 3px #111;
+    width: 100%;
+    height: 10%;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.img{
+
+    font-family: 'Arial';
+    font-style: bold;
+    color: azure;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+
+
+}
+
+
+@-webkit-keyframes colorchange {
+
+    0%  {background: #d191ff;}
+   25%  {background: #a6aaff;}
+   50%  {background: #96daff;}
+   75%  {background: #1fe0c3;}
+  100%  {background: #64e873;}
+
+}
+@keyframes colorchange {
+    0%  {background: #d191ff;}
+   25%  {background: #a6aaff;}
+   50%  {background: #96daff;}
+   75%  {background: #1fe0c3;}
+  100%  {background: #64e873;}
+}
+
+body{
+    -webkit-animation: colorchange 10s infinite; 
+    animation: colorchange 10s infinite;
+}
+
+.parent {
+    display: flex;
+  }
+  
+  .parent a {
+    flex: 1;
+  }
+  
+  /* Decoration */
+  .parent {
+    padding: 8px;
+    background: #ededed;
+    font-family: 'Helvetica';
+    margin: 12 0 12;
+  }
+  
+  .parent a {
+    line-height: 26px;
+    font-family: 'Helvetica';
+    text-align: center;
+    text-decoration: none;
+    background: #dbdbdb;
+    margin: 2 5 2;
+    color: #111;
+  }
+  .messageTable {
+    line-height: 26px;
+    font-family: 'Helvetica';
+    text-align: center;
+    text-decoration: none;
+    background: #dbdbdb;
+    color: #111;
+  }
+
+body {background-color: #282C2F;}  body  {color: #F2F4F4;}  body {font-family: Arial;}</style>""")
 
 if __name__ == '__main__':
     with Configurator() as config:
