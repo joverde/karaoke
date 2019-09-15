@@ -1,0 +1,89 @@
+
+
+
+#banner{
+    position: relative;
+    font-family: 'Arial';
+    font-style: bold;
+    color: azure;
+    text-align: center;
+    font-size: 60px;
+    text-shadow: 2px 3px #111;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.img{
+
+    font-family: 'Arial';
+    font-style: bold;
+    color: azure;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+
+
+}
+
+
+@-webkit-keyframes colorchange {
+
+    0%  {background: #d191ff;}
+   25%  {background: #a6aaff;}
+   50%  {background: #96daff;}
+   75%  {background: #1fe0c3;}
+  100%  {background: #64e873;}
+
+}
+@keyframes colorchange {
+    0%  {background: #d191ff;}
+   25%  {background: #a6aaff;}
+   50%  {background: #96daff;}
+   75%  {background: #1fe0c3;}
+  100%  {background: #64e873;}
+}
+
+body{
+    -webkit-animation: colorchange 10s infinite; 
+    animation: colorchange 10s infinite;
+}
+
+.parent {
+    display: flex;
+  }
+  
+  .parent a {
+    flex: 1;
+  }
+  
+  /* Decoration */
+  .parent {
+    padding: 8px;
+    background: #ededed;
+    font-family: 'Helvetica';
+    margin: 12 0 12;
+  }
+  
+  .parent a {
+    line-height: 26px;
+    font-family: 'Helvetica';
+    text-align: center;
+    text-decoration: none;
+    background: #dbdbdb;
+    margin: 2 5 2;
+    color: #111;
+  }
+  .messageTable {
+    line-height: 26px;
+    font-family: 'Helvetica';
+    text-align: center;
+    text-decoration: none;
+    background: #dbdbdb;
+    color: #111;
+  }
+
