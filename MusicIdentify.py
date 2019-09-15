@@ -23,7 +23,7 @@ def hello_world(request):
 	# regex_replace(s, match_pattern, replacement)
 	# token AVXKwNGFqbuRMoWkQV9579J6mntxgw
 
-	return Response("""<head> <script>
+	return Response("""<head><script>
 		/**
  * Begins a stream with rev.ai using the AudioContext from the browser. Stream will continue until the websocket 
  * connection is closed. Follows the protocol specficied in our documentation:
@@ -220,8 +220,7 @@ function checkSimilarity(){
     return costs[s2.length];
   }
 
-
- </script> </head> <p>Steve KarAoki</p> <button id=\"streamButton\" onclick=\"doStream()\">Record</button> <p id=\"status\">Not Started</p> <table id=\"messages\"></table> <p>You got a <span id=\"output\">0</span>%</p><p>Lyrics:</p> <p id=\"lyrics2\">"""+result.json()["result"][0]["lyrics"]+"""</p>" + "\n" + "<style> body {background-color: #282C2F;}  body  {color: #F2F4F4;} body  {font-size: 3.2vw;} body {font-family: Arial;}</style>""")
+</script> </head> <p>Steve KarAoki</p> <button id=\"streamButton\" onclick=\"doStream()\">Record</button> <p id=\"status\">Not Started</p> <table id=\"messages\"></table> <p>You got a <span id=\"output\">0</span>%</p><p>Lyrics:</p> <p id=\"lyrics2\">"""+result.json()["result"][0]["lyrics"]+"""</p>" + "\n" + "<style> body {background-color: #282C2F;}  body  {color: #F2F4F4;} body  {font-size: 3.2vw;} body {font-family: Arial;}</style>""")
 
 if __name__ == '__main__':
     with Configurator() as config:
