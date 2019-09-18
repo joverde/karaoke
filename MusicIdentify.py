@@ -6,10 +6,11 @@ import json
 
 
 def hello_world(request):
+    token = "INSERT_TOKEN_HERE"
 	artist = (str(request)[str(request).index("Artist+Name=")+12:str(request).index("&")])
 	song = (str(request)[str(request).index("Song+Name=")+10:str(request).index("HTTP/1.1")-1])
 	print("Now Displaying content for:", song, 'by', artist)
-	result = requests.get('https://api.audd.io/findLyrics/?q='+artist + '%20'+ song+"&api_token=d54c12502bf9f8c2fb1af38c26b3f58b")
+	result = requests.get('https://api.audd.io/findLyrics/?q='+artist + '%20'+ song+"&api_token="+token)
 	print(result.json()["result"][0]["lyrics"])
 	url = (json.loads(result.json()["result"][0]["media"])[0]["url"])
 	videoid = url.split("v=")
@@ -18,14 +19,6 @@ def hello_world(request):
 		if not isinstance(videoid, str):
 			videoid = ""
 		
-		# if vid["provider"] == 'youtube':
-		# 	vidsource == vid["url"]
-	# print(vidsource)
-	# url = 'some/url/to/instabase/features'
-	# headers = {'Authorization': 'Bearer {0}'.format('AVXKwNGFqbuRMoWkQV9579J6mntxgw'),'Instabase-API-Args': json.dumps(my_api_arguments)}
-	# resp = requests.post(url, headers=headers).json()
-	# regex_replace(s, match_pattern, replacement)
-	# token AVXKwNGFqbuRMoWkQV9579J6mntxgw
 
 	return Response("""<head><script>
 		/**
